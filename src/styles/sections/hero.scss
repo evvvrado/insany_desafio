@@ -1,0 +1,288 @@
+.hero {
+	background-color: $color-neutral-light-gray-01;
+
+	.wrapper {
+		@include flex(row, center, space-between);
+	}
+
+	&__content {
+		@include flex(column, flex-start, flex-start);
+
+		margin-top: 9.3rem;
+
+		width: 100%;
+		max-width: 71.2rem;
+
+		&__upper-text {
+			@include flex(row, center, center, 1.2rem);
+			@extend %body-14-semi;
+			color: $color-neutral-dark-500;
+
+			margin-bottom: 1.6rem;
+		}
+
+		&__heading {
+			@extend %heading-72-regular;
+			color: $color-neutral-dark-700;
+			margin-bottom: 3.5rem;
+
+			i {
+				position: relative;
+
+				&::after {
+					content: "";
+					position: absolute;
+
+					right: 0;
+					bottom: 1rem;
+					width: 100%;
+					height: 0.6rem;
+					background-color: $color-primary-default;
+				}
+			}
+		}
+
+		&__description {
+			@extend %body-20-regular;
+			color: $color-neutral-dark-400;
+			max-width: 54.5rem;
+			margin-bottom: 4rem;
+		}
+
+		&__actions {
+			@include flex(row, center, flex-start, 4.9rem);
+			margin-bottom: 6.9rem;
+
+			&__register {
+				@extend %button-bigger-filled;
+				@extend %button-primary-hide-arrow-effect;
+			}
+
+			&__talk {
+				@extend %button-anchor;
+				--color: #{$color-neutral-dark-500};
+			}
+		}
+
+		&__bottom {
+			&__arrows {
+				@include flex(column, center, center, 0);
+
+				svg {
+					&:first-child {
+						animation: opacity-animation 2s infinite 0.32s;
+					}
+					&:nth-child(2) {
+						animation: opacity-animation 2s infinite 0.15s;
+					}
+					&:last-child {
+						animation: opacity-animation 2s infinite;
+					}
+				}
+
+				@keyframes opacity-animation {
+					from {
+						opacity: 0;
+					}
+					to {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	&__image {
+		margin-left: -14.3rem;
+		position: relative;
+		user-select: none;
+
+		&__float-chat,
+		&__graph {
+			position: absolute;
+		}
+
+		&__float-chat {
+			right: 30.8rem;
+			bottom: 41.6rem;
+			transition: 0.32s;
+
+			animation: float-char-animation 3s ease-in-out infinite alternate-reverse;
+
+			@keyframes float-char-animation {
+				from {
+					transform: translateY(-2rem);
+				}
+				to {
+					transform: translateY(2rem);
+				}
+			}
+		}
+
+		&__graph {
+			@extend %center;
+			flex-direction: column;
+			gap: 2.3rem;
+
+			right: 0;
+			bottom: 14.3rem;
+
+			height: 19.9rem;
+			width: 22.1rem;
+			background-color: $color-white;
+
+			transition: 0.32s;
+
+			&__header {
+				@include flex(row, flex-start, flex-start, 2.8rem);
+
+				&__text {
+					strong {
+						@extend %body-14-semi;
+						color: $color-neutral-dark-300;
+						display: block;
+					}
+
+					span {
+						@extend %body-14-semi;
+						font-size: 1.3rem;
+						color: $color-neutral-dark-100;
+						display: block;
+					}
+				}
+
+				&__arrow {
+					height: 3.4rem;
+					width: 3.4rem;
+
+					position: relative;
+
+					@include flex(column, center, center);
+
+					&::after {
+						position: absolute;
+						content: "";
+
+						width: 2.267rem;
+						height: 2.267rem;
+						border-radius: 100%;
+
+						aspect-ratio: 1/1;
+						opacity: 0.4;
+
+						background-color: $color-primary-default;
+
+						left: 0;
+						right: 0;
+
+						margin: 0 auto;
+					}
+
+					svg {
+						transform: translateY(-0.6rem);
+					}
+				}
+			}
+
+			&__columns {
+				@include flex(row, flex-end, flex-start, 2rem);
+				height: 7.6rem;
+
+				&__column {
+					width: 0.5rem;
+					height: 5.1rem;
+					background-color: $color-primary-default;
+
+					&:nth-child(even) {
+						opacity: 0.4;
+					}
+				}
+			}
+
+			&:hover {
+				transform: scale(1.1);
+				cursor: pointer;
+			}
+		}
+	}
+
+	@include media("<=tablet") {
+		&__image {
+			margin-left: -25.3rem;
+		}
+	}
+
+	@include media("<=sm_tablet") {
+		padding-top: 10rem;
+
+		.wrapper {
+			@include flex(column, center, center, 1.8rem);
+			text-align: center;
+		}
+
+		&__content {
+			align-items: center;
+
+			&__actions {
+				flex-direction: column;
+				gap: 3.2rem;
+				margin: 0;
+			}
+
+			&__bottom {
+				display: none;
+			}
+		}
+
+		&__image {
+			margin: 0;
+			width: 100%;
+			text-align: center;
+
+			&__float-chat {
+				left: 19.3rem;
+				bottom: 2.2rem;
+			}
+
+			&__graph {
+				bottom: 5.8rem;
+			}
+
+			img {
+				width: max-content;
+				margin: 0 auto;
+				display: block;
+			}
+		}
+	}
+
+	@include media("<=phone") {
+		&__content {
+			&__heading {
+				font-size: 3.2rem;
+
+				i {
+					&::after {
+						height: 0.3rem;
+						bottom: 0;
+					}
+				}
+			}
+		}
+
+		&__image {
+			&__float-chat {
+				right: 0;
+				left: 5.3rem;
+				bottom: 22rem;
+				width: 3.3rem;
+				height: 3.3rem;
+			}
+
+			&__graph {
+				bottom: 0;
+				transform: scale(0.7);
+			}
+		}
+	}
+}

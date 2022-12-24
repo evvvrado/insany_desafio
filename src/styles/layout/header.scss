@@ -7,17 +7,17 @@ header {
 	left: 0;
 	transition: 0.3s;
 
-	&[data-position="hide"] {
-		top: -5rem;
-	}
+	&[data-position="open"] {
+		background-color: $color-white;
 
-	&[data-position="reduced"] {
-		color: $color-cod-gray;
-		background: $color-gallery;
+		& > .container {
+			@include padding-y(2rem);
+		}
 	}
 
 	& > .container {
-		padding-top: 4rem;
+		@include padding-y(4rem);
+		transition: 0.32s;
 
 		& > .wrapper {
 			@include flex(row, center, space-between);

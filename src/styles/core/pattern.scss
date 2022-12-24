@@ -141,73 +141,73 @@
 %body-20-bold {
 	font-weight: 700;
 	font-size: 2rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-20-semi {
 	font-weight: 600;
 	font-size: 2rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-20-regular {
 	font-weight: 500;
 	font-size: 2rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-18-bold {
 	font-weight: 700;
 	font-size: 1.8rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-18-semi {
 	font-weight: 600;
 	font-size: 1.8rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-18-regular {
 	font-weight: 500;
 	font-size: 1.8rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-16-bold {
 	font-weight: 700;
 	font-size: 1.6rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-16-semi {
 	font-weight: 600;
 	font-size: 1.6rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-16-regular {
 	font-weight: 500;
 	font-size: 1.6rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-14-bold {
 	font-weight: 700;
 	font-size: 1.4rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-14-semi {
 	font-weight: 600;
 	font-size: 1.4rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 %body-14-regular {
 	font-weight: 500;
 	font-size: 1.4rem;
-	line-height: 125%;
+	line-height: 150%;
 }
 
 // BUTTON
@@ -257,6 +257,15 @@
 	height: 4.1rem;
 }
 
+%button-bigger {
+	@include padding-x(3.2rem);
+	@include flex(row, center, flex-start, 1rem);
+
+	@extend %body-18-semi;
+
+	height: 6rem;
+}
+
 %button-primary-outlined {
 	@extend %button-primary;
 	--color: #{$color-primary-default};
@@ -270,6 +279,21 @@
 	&:hover {
 		background-color: var(--color);
 		color: var(--alternative-color);
+	}
+}
+
+%button-bigger-filled {
+	@extend %button-bigger;
+	--color: #{$color-primary-default};
+	--alternative-color: #{$color-neutral-light-gray-03};
+
+	background: var(--color);
+	color: var(--alternative-color);
+
+	transition: 0.32s ease-in-out;
+
+	&:hover {
+		filter: brightness(1.2);
 	}
 }
 

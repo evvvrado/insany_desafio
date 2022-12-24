@@ -1,5 +1,5 @@
 import Link from "next/link"
-import React, { useLayoutEffect, useState } from "react"
+import React, { useContext, useLayoutEffect, useState } from "react"
 import TopBar from "../TopBar"
 
 import LogoImg from "../../../assets/header_logo.svg"
@@ -11,23 +11,24 @@ import IconArrow from "../../../assets/button_hover_arrow.svg"
 import { motion } from "framer-motion"
 import { Animations } from "../../../classes/Animations"
 
-const Header: React.FC = () => {
-	const [windowWidth, setWindowWidth] = useState(Number)
+import { Context } from "../../../context/WindowProvider"
 
-	const getWindowWidth = () => {
-		setWindowWidth(window.innerWidth)
+const Header: React.FC = () => {
+	const [headerState, setHeaderState] = useState("close")
+
+	const { windowWidth } = useContext(Context)
+
+	const getHeaderState = () => {
+		if (!window.scrollY) setHeaderState("close")
+		else setHeaderState("open")
 	}
 
 	useLayoutEffect(() => {
-		getWindowWidth()
-
-		window.addEventListener("resize", () => {
-			getWindowWidth()
-		})
+		window.addEventListener("scroll", getHeaderState)
 	}, [])
 
 	return (
-		<header>
+		<header data-position={headerState}>
 			<TopBar />
 
 			<motion.div
