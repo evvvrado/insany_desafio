@@ -1,0 +1,44 @@
+.topbar {
+	background-color: $color-neutral-dark-700;
+
+	.wrapper {
+		@include flex(row, center, center);
+		position: relative;
+		height: 100%;
+		padding: 0.5rem 0 0.6rem 0;
+		text-align: center;
+	}
+
+	&__text {
+		@extend %body-14-regular;
+		color: $color-neutral-light-gray-01;
+		max-width: 70%;
+
+		a {
+			text-decoration: underline;
+			transition: 0.32s;
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 1.5rem;
+		transition: 0.32s;
+
+		&:hover {
+			filter: brightness(2);
+		}
+	}
+
+	@include media("<=phone") {
+		.wrapper {
+			padding: 1.5rem 0 1.5rem 0;
+		}
+	}
+}

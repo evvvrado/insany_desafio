@@ -209,3 +209,85 @@
 	font-size: 1.4rem;
 	line-height: 125%;
 }
+
+// BUTTON
+
+%button-anchor {
+	@include flex(row, center, center, 1.2rem);
+	--color: #000;
+	transition: 0.32s;
+
+	span {
+		color: var(--color);
+		display: block;
+		position: relative;
+
+		&::after {
+			transition: 0.32s;
+			content: "";
+			position: absolute;
+			bottom: -0.2rem;
+			left: 0;
+
+			height: 0.1rem;
+			width: 0;
+
+			background-color: var(--color);
+		}
+	}
+
+	@extend %body-14-semi;
+	&:hover {
+		// transform: scale(1.05);
+
+		span {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+}
+
+%button-primary {
+	@include padding-x(1.6rem);
+	@include flex(row, center, flex-start, 1rem);
+
+	@extend %body-14-semi;
+
+	height: 4.1rem;
+}
+
+%button-primary-outlined {
+	@extend %button-primary;
+	--color: #{$color-primary-default};
+	--alternative-color: #{$color-neutral-light-gray-03};
+
+	border: solid 1px var(--color);
+	color: var(--color);
+
+	transition: 0.32s ease-in-out;
+
+	&:hover {
+		background-color: var(--color);
+		color: var(--alternative-color);
+	}
+}
+
+%button-primary-hide-arrow-effect {
+	gap: 0;
+
+	svg {
+		max-width: 0;
+		overflow: hidden;
+		transition: 0.5s ease-in-out;
+		opacity: 0;
+	}
+
+	&:hover {
+		svg {
+			margin-left: 1rem;
+			max-width: 4rem;
+			opacity: 1;
+		}
+	}
+}

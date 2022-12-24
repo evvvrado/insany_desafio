@@ -39,7 +39,7 @@ export function PageTitle({ title, description }: TPageTitle) {
 
 			<meta name="mobile-web-app-capable" content="yes" />
 			<meta name="apple-mobile-web-app-capable" content="yes" />
-			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
 			<title>{title}</title>
 			<meta name="description" content={description ? description : definition.description} />

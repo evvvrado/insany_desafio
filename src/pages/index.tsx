@@ -1,4 +1,5 @@
 import { definition } from "../classes/definition"
+import Header from "../components/layout/Header"
 import { PageTitle } from "../components/PageTitle"
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
 	return (
 		<>
 			<PageTitle title={`Início — ${definition.name}`} />
+			<Header />
 		</>
 	)
 }

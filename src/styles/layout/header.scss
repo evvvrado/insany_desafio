@@ -16,7 +16,73 @@ header {
 		background: $color-gallery;
 	}
 
+	& > .container {
+		padding-top: 4rem;
+
+		& > .wrapper {
+			@include flex(row, center, space-between);
+			width: 100%;
+		}
+	}
+
+	.header {
+		&__logo {
+			rect,
+			path {
+				transition: 0.32s;
+				transform-origin: bottom;
+			}
+
+			&:hover {
+				rect {
+					y: 21px;
+					height: 1.6rem;
+				}
+
+				path:first-of-type {
+					d: path("M5.7646 3.50002H2.94982V34.2111H15.7646V3.50002ZM0 0.550201V37.1609H18.7144V0.550201H0Z");
+				}
+			}
+		}
+
+		&__actions {
+			&__list {
+				@include flex(row, center, flex-start, 4.4rem);
+
+				&__item {
+					&__button-access {
+						@extend %button-anchor;
+						--color: #{$color-neutral-dark-500};
+					}
+
+					&__button-register {
+						@extend %button-primary-outlined;
+						@extend %button-primary-hide-arrow-effect;
+					}
+				}
+			}
+		}
+	}
+
 	&::-webkit-scrollbar {
 		display: none;
+	}
+
+	@include media("<=sm_phone") {
+		background: $color-white;
+
+		& > .container {
+			@include padding-y(2.6rem);
+		}
+
+		.header {
+			&__actions {
+				&__list {
+					&__item:last-child {
+						display: none;
+					}
+				}
+			}
+		}
 	}
 }
