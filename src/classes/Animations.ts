@@ -1,7 +1,3 @@
-const handleGetGraphRandomNumber = function () {
-	return Math.floor(Math.random() * (76 - 37) + 37)
-}
-
 export const Animations = {
 	header: {
 		initial: {
@@ -48,30 +44,6 @@ export const Animations = {
 	graphsColumn: {
 		initial: {
 			height: 0,
-		},
-		animate: {
-			height: handleGetGraphRandomNumber(),
-		},
-		animate2: {
-			height: handleGetGraphRandomNumber(),
-		},
-		animate3: {
-			height: handleGetGraphRandomNumber(),
-		},
-		animate4: {
-			height: handleGetGraphRandomNumber(),
-		},
-		animate5: {
-			height: handleGetGraphRandomNumber(),
-		},
-		animate6: {
-			height: handleGetGraphRandomNumber(),
-		},
-		animate7: {
-			height: handleGetGraphRandomNumber(),
-		},
-		animate8: {
-			height: handleGetGraphRandomNumber(),
 		},
 		transition: {
 			ease: "easeInOut",

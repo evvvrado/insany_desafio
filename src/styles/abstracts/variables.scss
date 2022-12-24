@@ -55,15 +55,16 @@ $color-neutral-dark-50: #757385;
 
 $color-neutral-light-gray-01: #f2f5fc;
 $color-neutral-light-gray-02: #cbd6e2;
+$color-neutral-light-blue-01: #97a5ff;
 
 $color-neutral-light-gray-03: #edeceb;
 
 $selection-color: unset;
 $selection-background: unset;
 
-$scroll-thumb: #eee;
-$scroll-hover: #eee;
-$scroll-background: #1c1c1c;
+$scroll-thumb: $color-primary-default;
+$scroll-hover: $color-primary-light;
+$scroll-background: $color-neutral-light-blue-01;
 $scroll-width: 0.5rem;
 $scroll-thumb-radius: 1rem;
 

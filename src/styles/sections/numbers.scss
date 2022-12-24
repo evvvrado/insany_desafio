@@ -1,0 +1,150 @@
+.numbers {
+	padding-top: 7.3rem;
+	padding-bottom: 7.6rem;
+
+	background-color: $color-primary-default;
+	background-image: url("../../assets/numbers_background.png");
+	background-size: cover;
+	background-position: top;
+
+	.wrapper {
+		width: 100%;
+		@include flex(row, center, space-between);
+	}
+
+	&__depoiments {
+		color: $color-white;
+
+		width: 100%;
+		max-width: 37.8rem;
+
+		&__depoiment {
+			@include flex(column, flex-start, flex-start, 1.6rem);
+
+			&__text {
+				@extend %body-20-regular;
+			}
+
+			&__info {
+				@include flex(row, center, center, 2rem);
+
+				&__avatar {
+					width: 5.4rem;
+					height: 5.4rem;
+
+					@extend %cover;
+				}
+
+				&__texts {
+					&__name {
+						@extend %body-18-semi;
+						display: block;
+					}
+
+					&__extra {
+						@extend %body-14-regular;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	&__content {
+		color: $color-white;
+		width: 100%;
+		max-width: 69rem;
+
+		&__list {
+			@include flex(row, center, flex-start, 5.6rem);
+
+			&__item {
+				flex: 1;
+				width: 100%;
+				max-width: 17.8rem;
+
+				&__number {
+					@extend %heading-56-regular;
+				}
+
+				&__description {
+					@extend %body-18-regular;
+				}
+			}
+		}
+
+		&__text {
+			margin-top: 3.2rem;
+			padding-top: 3.2rem;
+			position: relative;
+
+			&__paragraph {
+				@extend %body-16-regular;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+
+				top: 0;
+				left: 0;
+
+				width: 3.8rem;
+				height: 0.2rem;
+
+				background-color: $color-neutral-light-blue-01;
+			}
+		}
+	}
+
+	@include media("<=sm_tablet") {
+		.wrapper {
+			flex-direction: column;
+			text-align: center;
+			gap: 5.6rem;
+		}
+
+		&__depoiments {
+			&__depoiment {
+				&__text {
+					font-size: 1.6rem;
+				}
+
+				svg {
+					margin: 0 auto;
+				}
+
+				&__info {
+					width: max-content;
+					margin: 0 auto;
+				}
+			}
+		}
+
+		&__content {
+			margin: 0 auto;
+
+			&__list {
+				align-items: center;
+				justify-content: center;
+			}
+
+			&__text {
+				&::after {
+					right: 0;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+
+	@include media("<=phone") {
+		&__content {
+			&__list {
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
+}

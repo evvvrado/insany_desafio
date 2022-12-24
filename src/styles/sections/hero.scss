@@ -68,6 +68,13 @@
 			&__arrows {
 				@include flex(column, center, center, 0);
 
+				transition: 0.32s;
+
+				&:hover {
+					transform: scale(1.05);
+					cursor: pointer;
+				}
+
 				svg {
 					&:first-child {
 						animation: opacity-animation 2s infinite 0.32s;

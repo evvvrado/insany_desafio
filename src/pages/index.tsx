@@ -2,6 +2,7 @@ import { definition } from "../classes/definition"
 import Header from "../components/layout/Header"
 import { PageTitle } from "../components/PageTitle"
 import Hero from "../components/sections/Hero"
+import Numbers from "../components/sections/Numbers"
 
 export default function Home() {
 	console.log(
@@ -15,6 +16,7 @@ export default function Home() {
 			<PageTitle title={`Início — ${definition.name}`} />
 			<Header />
 			<Hero />
+			<Numbers />
 		</>
 	)
 }

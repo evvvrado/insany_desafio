@@ -8,7 +8,7 @@ header {
 	transition: 0.3s;
 
 	&[data-position="open"] {
-		background-color: $color-white;
+		background-color: #ffffffee;
 
 		& > .container {
 			@include padding-y(2rem);
