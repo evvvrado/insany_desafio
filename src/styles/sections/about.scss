@@ -146,4 +146,46 @@
 			@extend %body-18-regular;
 		}
 	}
+
+	@include media("<=sm_tablet") {
+		@include padding-y(6.4rem);
+
+		.wrapper {
+			text-align: center;
+			@include flex(column, center, center, 4.8rem);
+		}
+
+		&__enterprise {
+			&__list {
+				width: max-content;
+				margin: 0 auto;
+			}
+
+			&__bottom {
+				display: none;
+			}
+		}
+
+		&__video {
+			&__thumbnail {
+				margin-bottom: 4.8rem;
+			}
+		}
+	}
+
+	@include media("<=phone") {
+		&__enterprise {
+			&__title {
+				@include margin-x(auto);
+
+				font-size: 2.4rem;
+				max-width: 27rem;
+
+				margin-bottom: 4rem;
+			}
+
+			&__subtitle {
+			}
+		}
+	}
 }

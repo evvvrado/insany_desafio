@@ -5,6 +5,7 @@ import Header from "../components/layout/Header"
 import About from "../components/sections/About"
 import Hero from "../components/sections/Hero"
 import Numbers from "../components/sections/Numbers"
+import Brands from "../components/sections/Brands"
 
 export default function Home() {
 	console.log(
@@ -20,6 +21,7 @@ export default function Home() {
 			<Hero />
 			<Numbers />
 			<About />
+			<Brands />
 		</>
 	)
 }

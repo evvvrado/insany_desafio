@@ -220,7 +220,7 @@
 	}
 
 	@include media("<=sm_tablet") {
-		padding-top: 10rem;
+		padding-top: 7.4rem;
 
 		.wrapper {
 			@include flex(column, center, center, 1.8rem);

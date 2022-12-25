@@ -1,18 +1,31 @@
 import Image from "next/image"
-import React from "react"
+import React, { useContext } from "react"
+import { Context } from "../../../context/WindowProvider"
+
+import { motion } from "framer-motion"
 
 import videoThumb from "../../../assets/about_image_video.png"
+import videoThumbMobile from "../../../assets/about_image_video_mobile.png"
 import imageEnterprise from "../../../assets/about_image_small.png"
 
 import IconPlay from "../../../assets/about_icon_play.svg"
 import IconCheck from "../../../assets/about_icon_check.svg"
 import IconArrow from "../../../assets/hero_icon_arrow-down.svg"
+import { Animations } from "../../../classes/Animations"
 
 const About: React.FC = () => {
+	const { windowWidth } = useContext(Context)
+
 	return (
 		<section className="about">
 			<div className="wrapper">
-				<div className="about__enterprise">
+				<motion.div
+					initial={Animations.aboutEnterprise.initial}
+					transition={Animations.aboutEnterprise.transition}
+					whileInView={Animations.aboutEnterprise.whileInView}
+					viewport={{ once: true }}
+					className="about__enterprise"
+				>
 					<h3 className="about__enterprise__subtitle">Sobre a empresa</h3>
 					<h2 className="about__enterprise__title">Criando e inovando desde 1988</h2>
 
@@ -42,15 +55,25 @@ const About: React.FC = () => {
 							<Image src={imageEnterprise} alt={"Imagem Desenho Moça"} />
 						</picture>
 					</div>
-				</div>
+				</motion.div>
+
 				<div className="about__video">
-					<picture className="about__video__thumbnail">
-						<Image src={videoThumb} alt={"Vídeo exemplo"} />
+					<motion.picture
+						initial={Animations.aboutThumbnail.initial}
+						transition={Animations.aboutThumbnail.transition}
+						whileInView={Animations.aboutThumbnail.whileInView}
+						viewport={{ once: true }}
+						className="about__video__thumbnail"
+					>
+						<Image
+							src={windowWidth && windowWidth > 992 ? videoThumb : videoThumbMobile}
+							alt={"Vídeo exemplo"}
+						/>
 
 						<button type="button" className="about__video__thumbnail__play">
 							<IconPlay />
 						</button>
-					</picture>
+					</motion.picture>
 
 					<p className="about__video__text">
 						Suscipit pellentesque praesent auctor molestie massa nunc vitae. Felis eget

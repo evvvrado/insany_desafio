@@ -1,0 +1,8 @@
+.brands {
+	@include padding-y(4.6rem);
+	background-color: $color-neutral-light-gray-01;
+
+	&__list {
+		@include flex(row, center, space-between);
+	}
+}
