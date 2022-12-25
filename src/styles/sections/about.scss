@@ -1,0 +1,149 @@
+.about {
+	@include padding-y(12rem);
+	background-color: $color-white;
+
+	.wrapper {
+		@include flex(row, flex-start, space-between);
+	}
+
+	&__enterprise {
+		max-width: 48.3rem;
+		width: 100%;
+
+		&__subtitle {
+			@extend %body-14-semi;
+			color: $color-primary-default;
+		}
+
+		&__title {
+			@extend %heading-48-regular;
+			color: $color-neutral-dark-700;
+
+			display: block;
+			margin-top: 1.6rem;
+			margin-bottom: 4.9rem;
+		}
+
+		&__list {
+			&__item {
+				@extend %body-14-regular;
+
+				@include flex(row, center, flex-start, 1.6rem);
+
+				&:not(:last-child) {
+					margin-bottom: 2.5rem;
+				}
+			}
+		}
+
+		&__bottom {
+			@include flex(row, flex-end, space-between);
+			width: 100%;
+			max-width: 38.3rem;
+
+			margin-top: 2.3rem;
+
+			&__arrows {
+				@include flex(column, center, center, 0);
+
+				transition: 0.32s;
+
+				&:hover {
+					transform: scale(1.05);
+					cursor: pointer;
+				}
+
+				svg {
+					&:first-child {
+						animation: opacity-animation 2s infinite 0.32s;
+					}
+					&:nth-child(2) {
+						animation: opacity-animation 2s infinite 0.15s;
+					}
+					&:last-child {
+						animation: opacity-animation 2s infinite;
+					}
+				}
+
+				@keyframes opacity-animation {
+					from {
+						opacity: 0;
+					}
+					to {
+						opacity: 1;
+					}
+				}
+			}
+
+			&__image {
+				transition: 0.32s;
+
+				&:hover {
+					transform: translateY(-10px);
+				}
+			}
+		}
+	}
+
+	&__video {
+		max-width: 69.6rem;
+		width: 100%;
+
+		&__thumbnail {
+			box-shadow: 0px 20px 40px -10px rgba(15, 12, 32, 0.2);
+			position: relative;
+
+			@extend %cover;
+
+			img {
+				transition: 0.32s;
+				transition-delay: 0.2s;
+			}
+
+			&__play {
+				@extend %center;
+
+				position: absolute;
+				inset: 0;
+
+				width: 6.9rem;
+				height: 6.9rem;
+
+				margin: auto auto;
+				border-radius: 100%;
+
+				background-color: $color-primary-default;
+				transition: 0.32s;
+
+				animation: box-shadow-animation 1s ease-in-out infinite alternate-reverse;
+
+				@keyframes box-shadow-animation {
+					from {
+						box-shadow: 0 0 0 6px rgba(71, 96, 255, 0.3), 0 0 0 12px rgba(71, 96, 255, 0.3);
+					}
+					to {
+						box-shadow: 0 0 0 6px rgba(71, 96, 255, 0.3);
+					}
+				}
+			}
+
+			&:hover {
+				cursor: pointer;
+
+				img {
+					transform: scale(1.2);
+				}
+
+				.about__video__thumbnail__play {
+					transform: scale(1.2);
+				}
+			}
+		}
+
+		&__text {
+			margin-top: 3.9rem;
+			color: $color-neutral-dark-400;
+			@extend %body-18-regular;
+		}
+	}
+}

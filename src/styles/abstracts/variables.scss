@@ -59,8 +59,8 @@ $color-neutral-light-blue-01: #97a5ff;
 
 $color-neutral-light-gray-03: #edeceb;
 
-$selection-color: unset;
-$selection-background: unset;
+$selection-color: $color-neutral-light-gray-01;
+$selection-background: $color-primary-dark;
 
 $scroll-thumb: $color-primary-default;
 $scroll-hover: $color-primary-light;
