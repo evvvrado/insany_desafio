@@ -55,7 +55,11 @@ const Hero: React.FC = () => {
 					</p>
 
 					<div className="hero__content__actions">
-						<button className="hero__content__actions__register">
+						<button
+							name="cadastrar"
+							type="button"
+							className="hero__content__actions__register"
+						>
 							<span>Cadastrar meu negócio</span>
 							<IconButtonArrow />
 						</button>

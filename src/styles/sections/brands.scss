@@ -5,4 +5,18 @@
 	&__list {
 		@include flex(row, center, space-between);
 	}
+
+	@include media("<=sm_tablet") {
+		&__list {
+			@include padding-x(5rem);
+			flex-wrap: wrap;
+			gap: 5.4rem;
+		}
+	}
+
+	@include media("<=md_phone") {
+		&__list {
+			justify-content: center;
+		}
+	}
 }

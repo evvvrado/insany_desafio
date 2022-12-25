@@ -50,6 +50,7 @@ const Header: React.FC = () => {
 						<ul className="header__actions__list">
 							<li className="header__actions__list__item">
 								<button
+									name="acessar"
 									className="header__actions__list__item__button-access"
 									type="button"
 								>
@@ -60,6 +61,7 @@ const Header: React.FC = () => {
 
 							<li className="header__actions__list__item">
 								<button
+									name="cadastrar"
 									type="button"
 									className="header__actions__list__item__button-register"
 								>

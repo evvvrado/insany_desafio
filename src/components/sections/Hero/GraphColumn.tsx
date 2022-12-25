@@ -1,21 +1,26 @@
-import React from "react"
-
-import { Animations } from "../../../classes/Animations"
-
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 
 const GraphColumn: React.FC = () => {
-	const handleGetGraphRandomNumber = function () {
-		return Math.floor(Math.random() * (76 - 37) + 37)
+	const handleGetGraphRandomNumber = function (max: number, min: number) {
+		return Math.floor(Math.random() * (max - min) + min)
 	}
 
 	return (
 		<motion.div
-			initial={Animations.graphsColumn.initial}
-			animate={{
-				height: handleGetGraphRandomNumber(),
+			initial={{
+				height: handleGetGraphRandomNumber(76, 37),
 			}}
-			transition={Animations.graphsColumn.transition}
+			animate={{
+				height: handleGetGraphRandomNumber(76, 37),
+			}}
+			transition={{
+				ease: "easeInOut",
+				duration: 0.5,
+				repeat: Infinity,
+				repeatType: "reverse",
+				repeatDelay: handleGetGraphRandomNumber(3, 1),
+			}}
 			className="hero__image__graph__columns__column"
 		/>
 	)

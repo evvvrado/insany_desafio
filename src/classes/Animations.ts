@@ -41,17 +41,6 @@ export const Animations = {
 			ease: "easeInOut",
 		},
 	},
-	graphsColumn: {
-		initial: {
-			height: 0,
-		},
-		transition: {
-			ease: "easeInOut",
-			duration: 0.5,
-			// repeatDelay: 2,
-			// repeat: Infinity,
-		},
-	},
 	aboutEnterprise: {
 		initial: {
 			opacity: 0,

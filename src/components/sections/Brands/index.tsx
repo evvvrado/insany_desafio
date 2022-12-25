@@ -1,4 +1,3 @@
-import Image from "next/image"
 import React from "react"
 
 import LogoGoogle from "../../../assets/brands_logo_google.svg"

@@ -20,7 +20,12 @@ const TopBar: React.FC = () => {
 					<Link href={"/"}>fazer parte do SmartBusiness!</Link>
 				</span>
 
-				<button type="button" className="topbar__close" onClick={handleCloseTopbar}>
+				<button
+					name="fechar"
+					type="button"
+					className="topbar__close"
+					onClick={handleCloseTopbar}
+				>
 					<IconX />
 				</button>
 			</div>
