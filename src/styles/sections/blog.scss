@@ -1,0 +1,189 @@
+.blog {
+	@include padding-y(12rem);
+	background-color: $color-neutral-light-gray-01;
+
+	&__header {
+		width: 100%;
+		@include flex(row, flex-end, flex-start);
+
+		&__subtitle {
+			@extend %body-16-semi;
+			color: $color-primary-default;
+		}
+
+		&__title {
+			@extend %heading-48-regular;
+			color: $color-neutral-dark-700;
+			max-width: 41rem;
+		}
+
+		&__text {
+			margin-right: auto;
+		}
+
+		&__anchor {
+			margin-right: auto;
+
+			a {
+				@extend %button-anchor;
+			}
+		}
+
+		&__actions {
+			width: 5.3rem;
+			@include flex(row, center, center, 3.3rem);
+
+			&__button {
+				cursor: pointer;
+				transition: 0.32s;
+
+				&:hover {
+					opacity: 0.7;
+				}
+
+				&.disabled {
+					opacity: 0.4;
+					pointer-events: none;
+				}
+			}
+		}
+	}
+
+	&__list {
+		width: 100%;
+		max-width: 100%;
+		overflow: hidden;
+
+		padding-top: 5rem;
+		padding-bottom: 7.8rem;
+
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+
+		&__wrapper {
+			@include flex(row, center, flex-start, 3.2rem);
+			width: max-content;
+		}
+
+		&__item {
+			width: max-content;
+			transition: 0.32s;
+
+			scroll-snap-align: start;
+
+			&__thumbnail {
+				@extend %cover;
+
+				width: 28rem;
+				height: 34rem;
+
+				margin-bottom: 2.4rem;
+			}
+
+			&__info {
+				@include flex(row, center, flex-start, 1.6rem);
+				margin-bottom: 1.2rem;
+
+				&__category {
+					@extend %body-16-semi;
+					color: $color-primary-default;
+				}
+
+				&__release {
+					@extend %body-16-regular;
+					color: $color-neutral-dark-300;
+				}
+			}
+
+			&__title {
+				@extend %body-20-regular;
+				color: $color-neutral-dark-700;
+				margin-bottom: 2.4rem;
+				max-width: 27.9rem;
+
+				@include limitText(6rem, 2);
+			}
+
+			&__author {
+				@include flex(row, center, flex-start, 1.6rem);
+
+				&__avatar {
+					@extend %cover;
+
+					width: 4.8rem;
+					height: 4.8rem;
+				}
+
+				&__name {
+					@extend %body-16-semi;
+					color: $color-neutral-dark-700;
+				}
+
+				&__tag {
+					@extend %body-14-regular;
+					display: block;
+				}
+			}
+
+			&:hover {
+				transform: translateY(-10px);
+				cursor: pointer;
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__indicators {
+		@include flex(row, center, center, 1.5rem);
+		width: 100%;
+		max-width: 100%;
+		flex-wrap: wrap;
+
+		&__indicator {
+			width: 1rem;
+			height: 1rem;
+			border-radius: 100%;
+			background-color: $color-primary-default;
+
+			&.selected {
+				background-color: transparent;
+				border: solid 0.1rem $color-primary-default;
+			}
+		}
+	}
+
+	@include media("<=phone") {
+		@include padding-y(6.4rem);
+
+		&__header {
+			&__anchor,
+			&__actions {
+				display: none;
+			}
+
+			&__subtitle {
+				font-size: 1.6rem;
+				text-align: center;
+				margin-bottom: 1.6rem;
+			}
+
+			&__title {
+				font-size: 2.4rem;
+				text-align: center;
+				max-width: 20rem;
+			}
+
+			&__text {
+				margin: 0 auto;
+			}
+		}
+
+		&__list {
+			overflow: scroll;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+	}
+}

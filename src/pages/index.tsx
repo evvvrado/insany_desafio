@@ -6,6 +6,8 @@ import About from "../components/sections/About"
 import Hero from "../components/sections/Hero"
 import Numbers from "../components/sections/Numbers"
 import Brands from "../components/sections/Brands"
+import Works from "../components/sections/Works"
+import Blog from "../components/sections/Blog"
 
 export default function Home() {
 	console.log(
@@ -22,6 +24,8 @@ export default function Home() {
 			<Numbers />
 			<About />
 			<Brands />
+			<Works />
+			<Blog />
 		</>
 	)
 }

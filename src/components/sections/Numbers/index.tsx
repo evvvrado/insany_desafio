@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React from "react"
 import NumberItem from "./NumberItem"
 
 import IconMark from "../../../assets/numbers_marks.svg"

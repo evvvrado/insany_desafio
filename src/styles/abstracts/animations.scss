@@ -1,0 +1,8 @@
+@keyframes box-shadow-animation {
+	from {
+		box-shadow: 0 0 0 6px rgba(71, 96, 255, 0.3), 0 0 0 12px rgba(71, 96, 255, 0.3);
+	}
+	to {
+		box-shadow: 0 0 0 6px rgba(71, 96, 255, 0.3);
+	}
+}
