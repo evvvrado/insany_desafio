@@ -1,0 +1,149 @@
+.doubts {
+	padding-top: 12rem;
+	padding-bottom: 3.6rem;
+	background-color: $color-white;
+
+	.wrapper {
+		@include flex(row, flex-start, space-between);
+	}
+
+	&__text {
+		max-width: 41rem;
+
+		&__subtitle {
+			@extend %body-16-semi;
+			color: $color-primary-default;
+			margin-bottom: 1.6rem;
+		}
+
+		&__title {
+			@extend %heading-48-regular;
+			color: $color-neutral-dark-700;
+			margin-bottom: 1.6rem;
+		}
+
+		&__description {
+			@extend %body-20-regular;
+			color: $color-neutral-dark-500;
+			margin-bottom: 4rem;
+		}
+
+		&__button-access {
+			@extend %button-anchor;
+			--color: #{$color-neutral-dark-500};
+		}
+
+		&__button-register {
+			@extend %button-bigger-filled;
+			@extend %button-primary-hide-arrow-effect;
+			@extend %body-16-regular;
+			margin-bottom: 2.4rem;
+		}
+	}
+
+	&__list {
+		max-width: 69rem;
+		width: 100%;
+
+		&__item {
+			width: 100%;
+
+			&__details {
+				width: 100%;
+
+				padding-top: 3.6rem;
+				padding-bottom: 4.6rem;
+
+				border-bottom: solid 0.15rem $color-neutral-light-gray-02;
+
+				&__summary {
+					width: 100%;
+					@include flex(row, center, flex-start, 2.4rem);
+					cursor: pointer;
+
+					&__number {
+						@extend %heading-24-regular;
+						color: $color-primary-default;
+					}
+
+					&__text {
+						@extend %body-20-regular;
+						color: $color-neutral-dark-200;
+					}
+
+					&__icon {
+						margin-left: auto;
+					}
+				}
+
+				&__content {
+					@extend %body-16-regular;
+					color: $color-neutral-dark-400;
+					padding-top: 1.4rem;
+					padding-left: 5.2rem;
+				}
+
+				&[open] {
+					animation: sweep 0.5s ease-in-out;
+				}
+			}
+		}
+	}
+
+	@include media("<=sm_tablet") {
+		.wrapper {
+			@include flex(column, flex-start, center, 3.2rem);
+		}
+
+		&__text {
+			text-align: center;
+			width: 100%;
+			max-width: 100%;
+
+			&__button-access,
+			&__button-register {
+				margin: 0 auto;
+			}
+
+			&__button-register {
+				margin-bottom: 3.2rem;
+			}
+		}
+
+		&__list {
+			max-width: 100%;
+		}
+	}
+
+	@include media("<=phone") {
+		padding-top: 6.4rem;
+		padding-bottom: 1.6rem;
+
+		&__text {
+			&__subtitle {
+				font-size: 1.6rem;
+			}
+
+			&__title {
+				font-size: 2.4rem;
+			}
+
+			&__paragraph {
+				margin-bottom: 4rem;
+			}
+		}
+
+		&__list {
+			&__item {
+				&__details {
+					padding-top: 2.4rem;
+					padding-bottom: 2.9rem;
+
+					&__summary {
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+	}
+}

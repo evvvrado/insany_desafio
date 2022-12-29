@@ -8,6 +8,10 @@ import Numbers from "../components/sections/Numbers"
 import Brands from "../components/sections/Brands"
 import Works from "../components/sections/Works"
 import Blog from "../components/sections/Blog"
+import Doubts from "../components/sections/Doubts"
+import Actions from "../components/sections/Actions"
+import Newsletter from "../components/sections/Newsletter"
+import Footer from "../components/layout/Footer"
 
 export default function Home() {
 	console.log(
@@ -26,6 +30,10 @@ export default function Home() {
 			<Brands />
 			<Works />
 			<Blog />
+			<Doubts />
+			<Actions />
+			<Newsletter />
+			<Footer />
 		</>
 	)
 }

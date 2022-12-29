@@ -1,0 +1,62 @@
+.actions {
+	padding-top: 3.6rem;
+	padding-bottom: 12rem;
+
+	.wrapper {
+		@include flex(row, center, space-between, 3.2rem);
+	}
+
+	&__box {
+		@include flex(column, center, center);
+		@include padding-x(2rem);
+
+		text-align: center;
+
+		width: 100%;
+		max-width: 38.4rem;
+		height: 24rem;
+		background-color: $color-neutral-light-gray-01;
+
+		cursor: pointer;
+
+		transition: 0.32s;
+
+		&__icon {
+			margin-bottom: 2.7rem;
+		}
+
+		&__title {
+			@extend %body-20-regular;
+			color: $color-neutral-dark-700;
+			margin-bottom: 0.4rem;
+		}
+
+		&__paragraph {
+			@extend %body-14-regular;
+			color: $color-neutral-dark-300;
+		}
+
+		&:hover {
+			background-color: $color-white;
+			box-shadow: 0px 20px 30px -20px rgba(94, 97, 118, 0.15);
+		}
+	}
+
+	@include media("<=phone") {
+		.wrapper {
+			flex-direction: column;
+			gap: 2.4rem;
+		}
+
+		&__box {
+			&__title {
+				font-size: 1.6rem;
+			}
+
+			&__paragraph {
+				font-size: 1.4rem;
+				max-width: 18rem;
+			}
+		}
+	}
+}

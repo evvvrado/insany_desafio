@@ -1,0 +1,85 @@
+footer {
+	@include padding-y(5.4rem);
+
+	.wrapper {
+		@include flex(row, center, space-between);
+	}
+
+	.footer {
+		&__left {
+			@include flex(row, center, space-between);
+			max-width: 58.5rem;
+			width: 100%;
+
+			&__copyright {
+				@extend %body-14-regular;
+				color: $color-neutral-dark-300;
+			}
+		}
+
+		&__right {
+			max-width: 48.8rem;
+			width: 100%;
+			@include flex(row, center, space-between);
+
+			&__socials {
+				@include flex(row, center, center, 1.6rem);
+
+				&__item {
+					transition: 0.32s;
+
+					width: 3.2rem;
+					height: 3.2rem;
+
+					border-radius: 0.5rem;
+
+					&:hover {
+						background-color: $color-neutral-light-gray-03;
+						opacity: 0.7;
+					}
+				}
+			}
+
+			&__insany {
+				@extend %body-14-regular;
+				color: $color-neutral-dark-400;
+
+				&__link {
+					padding-left: 0.5rem;
+					text-decoration: underline;
+					transition: 0.32s;
+
+					&:hover {
+						opacity: 0.7;
+						letter-spacing: 0.1rem;
+					}
+				}
+			}
+		}
+	}
+
+	@include media("<=sm_tablet") {
+		.wrapper {
+			flex-direction: column;
+			gap: 3.2rem;
+		}
+
+		.footer {
+			&__left {
+				align-items: center;
+				flex-direction: column;
+				gap: 2.3rem;
+
+				&__copyright {
+					text-align: center;
+					max-width: 17.8rem;
+				}
+			}
+			&__right {
+				align-items: center;
+				flex-direction: column;
+				gap: 3.2rem;
+			}
+		}
+	}
+}

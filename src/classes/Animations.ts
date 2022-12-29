@@ -116,4 +116,19 @@ export const Animations = {
 			delay: 0.7,
 		},
 	},
+	actionsWrapper: {
+		initial: {
+			opacity: 0,
+			y: 20,
+		},
+		whileInView: {
+			opacity: 1,
+			y: 0,
+		},
+		transition: {
+			ease: "easeInOut",
+			duration: 0.5,
+			delay: 0.7,
+		},
+	},
 }
