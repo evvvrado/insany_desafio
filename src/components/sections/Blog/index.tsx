@@ -36,10 +36,11 @@ const Blog: React.FC = () => {
 		if (!blogList) return
 
 		const wrapperWidth = blogRef.current.children[0].clientWidth
-		const postQuantity = blogList.length
-		const postPerScreen = Math.round(postQuantity / ((postQuantity * postWidth) / wrapperWidth))
+		const postPerScreen = Math.round(
+			blogList.length / ((blogList.length * postWidth) / wrapperWidth)
+		)
 
-		setBlogViewsQuantity(postQuantity / postPerScreen)
+		setBlogViewsQuantity(blogList.length / postPerScreen)
 	}
 
 	const getIndicatorSize = function () {
@@ -57,6 +58,8 @@ const Blog: React.FC = () => {
 	useLayoutEffect(() => {
 		getPostQuantityPerSlide()
 
+		if (!blogList) return
+
 		windowWidth <= 730 &&
 			windowWidth > 0 &&
 			listRef.current.addEventListener("scroll", verifyIndicator)
@@ -72,11 +75,13 @@ const Blog: React.FC = () => {
 	}
 
 	const verifyIndicator = () => {
+		if (!blogList) return
+
 		const atualScrollLeft = listRef.current.scrollLeft
 
 		const resultSlide = Math.ceil(atualScrollLeft / (listGap + postWidth) + 1)
 
-		setSlideView(clamp(resultSlide, 1, blogViewsQuantity))
+		setSlideView(clamp(resultSlide, 1, blogList?.length))
 	}
 
 	const handleNextSlide = () => {

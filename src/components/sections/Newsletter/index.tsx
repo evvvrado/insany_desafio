@@ -13,7 +13,7 @@ const Newsletter: React.FC = () => {
 					tudo que pode fazer sua empresa crescer.
 				</p>
 
-				<form className="newsletter__form" action="javascript:void(0)">
+				<form className="newsletter__form">
 					<label className="newsletter__form__label">
 						<IconMail />
 

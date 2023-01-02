@@ -1,0 +1,155 @@
+.acessar__modal-overlay {
+	background: rgba(0 0 0 / 0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: grid;
+	place-items: center;
+	overflow-y: auto;
+}
+
+.acessar__modal-content {
+	position: fixed;
+	inset: 0;
+	margin: auto auto;
+	z-index: z("modals");
+	width: 100%;
+	max-width: 74.2rem;
+	height: 46rem;
+
+	background: $color-white;
+	border-radius: 0.6rem;
+
+	overflow: hidden;
+	@include flex(row, flex-start, flex-start);
+
+	&__left {
+		width: 100%;
+		max-width: 22.2rem;
+		height: 100%;
+
+		position: relative;
+
+		background-color: $color-primary-default;
+		background-image: url("../../assets/forget_image_backgruond.png");
+
+		&__float {
+			position: absolute;
+
+			left: 3.3rem;
+			top: 12.4rem;
+
+			animation: float-char-animation 3s ease-in-out infinite alternate-reverse;
+		}
+	}
+
+	&__right {
+		padding-top: 8rem;
+		padding-left: 5.4rem;
+
+		&__title {
+			@extend %heading-32-semi;
+			color: $color-neutral-dark-700;
+		}
+
+		&__text {
+			@extend %body-16-regular;
+			color: $color-neutral-dark-50;
+
+			display: block;
+			margin-top: 0.8rem;
+			margin-bottom: 1.4rem;
+			max-width: 34.1rem;
+		}
+
+		&__form {
+			width: 100%;
+			margin-bottom: var(--margin-bottom-spacement);
+
+			&__label {
+				width: 100%;
+				display: block;
+				margin-bottom: 2.8rem;
+
+				&__text {
+					@extend %body-14-regular;
+					color: $color-neutral-dark-50;
+				}
+
+				&__input {
+					@extend %body-14-regular;
+
+					width: 100%;
+					height: 5.6rem;
+					margin-top: 0.3rem;
+					border: solid 0.15rem hsla(207, 10%, 66%, 0.4);
+					padding-left: 2rem;
+
+					color: $color-neutral-dark-800;
+
+					&:focus {
+						border: solid 0.2rem rgb(29, 99, 255, 0.5);
+					}
+				}
+			}
+
+			&__submit {
+				@extend %center;
+				@extend %body-16-regular;
+				color: $color-white;
+				height: 5.6rem;
+				width: 100%;
+				background-color: $color-primary-light;
+
+				transition: 0.32s;
+
+				&:hover {
+					background-color: $color-primary-default;
+				}
+			}
+		}
+	}
+
+	@include media("<=phone") {
+		flex-direction: column;
+
+		&__left {
+			background-size: cover;
+			background-position: center;
+			max-width: 100%;
+
+			&__float {
+				top: 0;
+				right: 0;
+				left: 0;
+				margin: 0 auto;
+				width: max-content;
+				display: block;
+			}
+		}
+
+		&__right {
+			padding: 3rem;
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}
+
+.acessar__modal-close-icon {
+	position: absolute;
+	right: 4.3rem;
+	top: 4.3rem;
+}
+
+.acessar__modal-overlay[data-state="open"],
+.acessar__modal-content[data-state="open"] {
+	animation: fadeIn 300ms ease-out;
+}
+
+.acessar__modal-overlay[data-state="closed"],
+.acessar__modal-content[data-state="closed"] {
+	animation: fadeOut 300ms ease-in;
+}
