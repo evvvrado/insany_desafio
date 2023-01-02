@@ -1,0 +1,399 @@
+.acessar {
+	@include flex(row, flex-start, flex-start);
+	height: 100vh;
+	padding: 0;
+
+	--margin-bottom-spacement: 3.2rem;
+
+	&__banner,
+	&__area {
+		flex: 1;
+		padding-top: 8.8rem;
+		position: relative;
+		height: 100%;
+	}
+
+	&__banner {
+		max-width: 52.8rem;
+		padding-left: 8.8rem;
+		background-color: $color-primary-default;
+		height: max-content;
+
+		&__logo {
+			margin-bottom: 6.3rem;
+			display: block;
+		}
+
+		&__title {
+			@extend %heading-32-regular;
+			display: block;
+			color: $color-white;
+			max-width: 32.8rem;
+
+			strong {
+				font-weight: 600;
+			}
+		}
+
+		&__picture {
+			display: block;
+			margin-top: 15.6rem;
+			margin-left: -8rem;
+			position: relative;
+			width: max-content;
+
+			&__graph {
+				@extend %center;
+				flex-direction: column;
+				gap: 2.3rem;
+
+				position: absolute;
+
+				right: -1.8rem;
+				bottom: 7.3rem;
+
+				height: 19.9rem;
+				width: 22.1rem;
+				background-color: $color-white;
+
+				transition: 0.32s;
+
+				&__header {
+					@include flex(row, flex-start, flex-start, 2.8rem);
+
+					&__text {
+						strong {
+							@extend %body-14-semi;
+							color: $color-neutral-dark-300;
+							display: block;
+						}
+
+						span {
+							@extend %body-14-semi;
+							font-size: 1.3rem;
+							color: $color-neutral-dark-100;
+							display: block;
+						}
+					}
+
+					&__arrow {
+						height: 3.4rem;
+						width: 3.4rem;
+
+						position: relative;
+
+						@include flex(column, center, center);
+
+						&::after {
+							position: absolute;
+							content: "";
+
+							width: 2.267rem;
+							height: 2.267rem;
+							border-radius: 100%;
+
+							aspect-ratio: 1/1;
+							opacity: 0.4;
+
+							background-color: $color-primary-default;
+
+							left: 0;
+							right: 0;
+
+							margin: 0 auto;
+						}
+
+						svg {
+							transform: translateY(-0.6rem);
+						}
+					}
+				}
+
+				&__columns {
+					@include flex(row, flex-end, flex-start, 2rem);
+					height: 7.6rem;
+
+					&__column {
+						width: 0.5rem;
+						background-color: $color-primary-default;
+
+						&:nth-child(even) {
+							opacity: 0.4;
+						}
+					}
+				}
+
+				&:hover {
+					transform: scale(1.1);
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	&__area {
+		padding-left: 24.7rem;
+
+		&__header {
+			margin-bottom: 8.1rem;
+			&__redirect {
+				@extend %button-anchor;
+				width: max-content;
+			}
+		}
+
+		&__main {
+			width: 100%;
+			max-width: 47.5rem;
+
+			&__title {
+				@extend %heading-32-regular;
+				color: $color-neutral-dark-200;
+				margin-bottom: 3.8rem;
+			}
+
+			&__form {
+				width: 100%;
+				margin-bottom: var(--margin-bottom-spacement);
+
+				&__label {
+					width: 100%;
+					display: block;
+					margin-bottom: 2.8rem;
+
+					&__text {
+						@extend %body-14-regular;
+						color: $color-neutral-dark-50;
+					}
+
+					&__input {
+						width: 100%;
+						height: 5.6rem;
+						margin-top: 0.3rem;
+						border: solid 0.15rem hsla(207, 10%, 66%, 0.4);
+						padding-left: 2rem;
+
+						color: $color-neutral-dark-800;
+
+						&:focus {
+							border: solid 0.2rem rgb(29, 99, 255, 0.5);
+						}
+					}
+				}
+
+				&__row {
+					@extend %body-14-regular;
+
+					margin-bottom: var(--margin-bottom-spacement);
+					@include flex(row, center, space-between);
+					width: 100%;
+
+					&__forget {
+						color: $color-primary-light;
+						transition: 0.32s;
+
+						&:hover {
+							color: $color-primary-default;
+						}
+					}
+
+					&__label-check {
+						@include flex(row, center, flex-start, 0.8rem);
+
+						&__input {
+							all: unset;
+
+							box-sizing: border-box;
+
+							height: 2rem;
+							width: 2rem;
+
+							@extend %center;
+
+							border: solid 0.15rem hsla(207, 10%, 66%, 0.4);
+							border-radius: 0.3rem;
+
+							&::after {
+								@extend %center;
+
+								content: "\2713";
+								position: static;
+
+								width: max-content;
+								height: max-content;
+								transform: scale(0);
+								transition: 0.32s;
+
+								display: block;
+
+								color: $color-primary-default;
+								font-weight: 700;
+
+								margin: auto auto;
+								background-size: cover;
+
+								transform-origin: center;
+							}
+
+							&:hover {
+								border: solid 0.15rem rgba(29, 101, 255, 0.564);
+							}
+
+							&:checked {
+								border: solid 0.2rem rgb(29, 99, 255, 0.5);
+
+								&::after {
+									transform: scale(1) translateY(-0.2rem);
+								}
+							}
+						}
+
+						&__text {
+							color: $color-neutral-dark-50;
+						}
+					}
+				}
+
+				&__submit {
+					@extend %center;
+					@extend %body-16-regular;
+					color: $color-white;
+					height: 5.6rem;
+					width: 100%;
+					background-color: $color-primary-light;
+
+					transition: 0.32s;
+
+					&:hover {
+						background-color: $color-primary-default;
+					}
+				}
+			}
+
+			&__divider {
+				@include flex(row, center, center, 1.3rem);
+
+				@extend %body-14-regular;
+				color: #a9abb7;
+
+				margin-bottom: var(--margin-bottom-spacement);
+
+				hr {
+					width: 100%;
+					height: 0.1rem;
+					background-color: $color-black;
+					opacity: 0.05;
+				}
+			}
+
+			&__google {
+				@extend %center;
+				@extend %body-16-regular;
+
+				margin-bottom: var(--margin-bottom-spacement);
+
+				gap: 1.6rem;
+
+				color: #5c6277;
+				height: 5.6rem;
+				width: 100%;
+				background-color: rgba(109, 120, 159, 0.1);
+
+				transition: 0.32s;
+
+				&:hover {
+					background-color: $color-neutral-light-gray-02;
+				}
+			}
+		}
+
+		&__footer {
+			&__text {
+				@extend %body-14-regular;
+				color: $color-neutral-dark-100;
+
+				a {
+					font-weight: 800;
+					text-decoration: underline;
+					transition: 0.32s;
+
+					&:hover {
+						color: $color-neutral-dark-700;
+					}
+				}
+			}
+		}
+	}
+
+	@include media("<desktop") {
+		&__banner {
+			&__picture {
+				margin-top: 5.4rem;
+			}
+		}
+	}
+
+	@include media("<=sm_desktop") {
+		&__banner,
+		&__area {
+			padding-top: 6rem;
+		}
+
+		&__area {
+			padding-left: 15rem;
+			&__header {
+				margin-bottom: 4rem;
+			}
+		}
+	}
+
+	@include media("<=tablet") {
+		--margin-bottom-spacement: 2.2rem;
+		&__area {
+			padding-left: 6rem;
+		}
+	}
+
+	@include media("<=sm_tablet") {
+		flex-direction: column;
+
+		&__banner,
+		&__area {
+			max-width: 100%;
+			width: 100%;
+			height: max-content;
+
+			padding: 4rem 3rem;
+		}
+
+		&__banner {
+			&__picture {
+				position: static;
+				img {
+					display: none;
+				}
+
+				&__graph {
+					right: 4rem;
+					bottom: -10rem;
+				}
+			}
+		}
+
+		&__area {
+			&__main {
+				max-width: 100%;
+			}
+		}
+	}
+
+	@include media("<=md_phone") {
+		&__banner {
+			&__picture {
+				&__graph {
+					transform: scale(0.7);
+				}
+			}
+		}
+	}
+}

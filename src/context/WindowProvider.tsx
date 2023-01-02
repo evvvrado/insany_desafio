@@ -1,4 +1,5 @@
 import React, { createContext, ReactNode, useLayoutEffect, useState } from "react"
+import { useHomesQuery } from "../generated/graphql"
 
 type IWindowProvider = {
 	children?: ReactNode | undefined

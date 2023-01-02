@@ -1,0 +1,10 @@
+query Doubts {
+	home(stage: PUBLISHED, where: { id: "clcewj71zcvz50bloxqiu8jnt" }) {
+		doubtsList {
+			... on Question {
+				summary
+				content
+			}
+		}
+	}
+}

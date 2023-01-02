@@ -1,0 +1,26 @@
+query Homes {
+	home(stage: PUBLISHED, where: { id: "clcewj71zcvz50bloxqiu8jnt" }) {
+		blogList(first: 16) {
+			... on BlogPost {
+				id
+				stage
+				title
+				postedAt
+				category
+				blogAuthor {
+					name
+					avatar {
+						url
+						height
+						width
+					}
+				}
+				thumbnail {
+					url
+					width
+					height
+				}
+			}
+		}
+	}
+}

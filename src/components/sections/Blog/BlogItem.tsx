@@ -1,31 +1,42 @@
 import React from "react"
 
-import BlogThumbnail from "../../../assets/blog_image_banner1.png"
-import BlogAvatar from "../../../assets/blog_image_avatar1.png"
 import Image from "next/image"
+import { mounthsInPortuguese } from "../../../classes/Util"
 
-const BlogItem: React.FC = () => {
+const BlogItem: React.FC = ({ post }: any) => {
+	const postReleaseDate = new Date(post.postedAt)
+	const postReleaseYear = postReleaseDate.getFullYear()
+	const postReleaseMounth = postReleaseDate.getMonth()
+
 	return (
 		<div className="blog__list__item">
 			<picture className="blog__list__item__thumbnail">
-				<Image src={BlogThumbnail} alt={"Conteúdo do Blog "} />
+				<Image
+					src={post.thumbnail.url}
+					width={post.thumbnail.width}
+					height={post.thumbnail.height}
+					alt={"Conteúdo do Blog "}
+				/>
 			</picture>
 
 			<div className="blog__list__item__info">
-				<span className="blog__list__item__info__category">Business</span>
-				<span className="blog__list__item__info__release">Outubro 2021</span>
+				<span className="blog__list__item__info__category">{post.category}</span>
+				<span className="blog__list__item__info__release">{`${mounthsInPortuguese[postReleaseMounth]} ${postReleaseYear}`}</span>
 			</div>
 
-			<strong className="blog__list__item__title">
-				Sollicitudin a sagittis, risus nisl, fermentum, tincidunt dolor
-			</strong>
+			<strong className="blog__list__item__title">{post.title}</strong>
 
 			<div className="blog__list__item__author">
 				<picture className="blog__list__item__author__avatar">
-					<Image src={BlogAvatar} alt={"Autor do Blog"} />
+					<Image
+						src={post.blogAuthor.avatar.url}
+						width={post.blogAuthor.avatar.width}
+						height={post.blogAuthor.avatar.height}
+						alt={"Autor do Blog"}
+					/>
 				</picture>
 				<div className="blog__list__item__author__name">
-					<span>Savannah Nguyen</span>
+					<span>{post.blogAuthor.name}</span>
 					<span className="blog__list__item__author__tag">Autor</span>
 				</div>
 			</div>

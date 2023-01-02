@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"codegen": "graphql-codegen --config codegen.yml"
 	},
 	"dependencies": {
 		"@svgr/webpack": "^6.5.1",
@@ -16,12 +17,19 @@
 		"eslint": "8.28.0",
 		"eslint-config-next": "13.0.5",
 		"framer-motion": "^8.0.2",
+		"graphql": "^16.6.0",
 		"next": "13.0.5",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"typescript": "4.9.3"
+		"typescript": "4.9.3",
+		"urql": "^3.0.3"
 	},
 	"devDependencies": {
+		"@graphql-codegen/cli": "^2.16.2",
+		"@graphql-codegen/import-types-preset": "^2.2.6",
+		"@graphql-codegen/typescript": "^2.8.6",
+		"@graphql-codegen/typescript-operations": "^2.5.11",
+		"@graphql-codegen/typescript-urql": "^3.7.3",
 		"sass": "^1.57.1"
 	}
 }

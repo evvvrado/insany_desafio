@@ -49,14 +49,14 @@ const Header: React.FC = () => {
 					<nav className="header__actions">
 						<ul className="header__actions__list">
 							<li className="header__actions__list__item">
-								<button
-									name="acessar"
+								<Link
+									href={"/login"}
 									className="header__actions__list__item__button-access"
 									type="button"
 								>
 									<IconUser />
 									<span>Acessar</span>
-								</button>
+								</Link>
 							</li>
 
 							<li className="header__actions__list__item">

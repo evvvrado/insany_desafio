@@ -1,5 +1,6 @@
 import Link from "next/link"
 import React, { useContext, useLayoutEffect, useRef, useState } from "react"
+import { GetStaticProps } from "next"
 
 import IconArrow from "../../../assets/blog_icon_arrow.svg"
 import IconAngleLeft from "../../../assets/blog_icon_angle_left.svg"
@@ -12,8 +13,13 @@ import { clamp } from "../../../classes/Util"
 import { motion } from "framer-motion"
 import { Animations } from "../../../classes/Animations"
 
+import { HomesDocument, useHomesQuery } from "../../../generated/graphql"
+import { client, ssrCache } from "../../../lib/urql"
+
 const Blog: React.FC = () => {
 	const { windowWidth } = useContext(Context)
+
+	const [{ data }] = useHomesQuery({})
 
 	const postWidth = 280
 	const listGap = 32
@@ -24,9 +30,11 @@ const Blog: React.FC = () => {
 	const [blogViewsQuantity, setBlogViewsQuantity] = useState(0)
 	const [slideView, setSlideView] = useState(1)
 
-	const blogList = [{}, {}, {}, {}, {}, {}, {}, {}]
+	const blogList = [data?.home?.blogList][0]
 
 	const getPostQuantityPerSlide = () => {
+		if (!blogList) return
+
 		const wrapperWidth = blogRef.current.children[0].clientWidth
 		const postQuantity = blogList.length
 		const postPerScreen = Math.round(postQuantity / ((postQuantity * postWidth) / wrapperWidth))
@@ -54,7 +62,7 @@ const Blog: React.FC = () => {
 			listRef.current.addEventListener("scroll", verifyIndicator)
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [windowWidth])
+	}, [windowWidth, blogList])
 
 	const changeSlideView = (flag: boolean) => {
 		const atualScrollLeft = listRef.current.scrollLeft
@@ -133,8 +141,8 @@ const Blog: React.FC = () => {
 					ref={listRef}
 				>
 					<div className="blog__list__wrapper">
-						{blogList.map((post, index) => {
-							return <BlogItem key={index} />
+						{blogList?.map((post, index) => {
+							return <BlogItem post={post} key={index} />
 						})}
 					</div>
 				</motion.div>
@@ -154,6 +162,16 @@ const Blog: React.FC = () => {
 			</div>
 		</section>
 	)
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+	await client.query(HomesDocument, {}).toPromise()
+
+	return {
+		props: {
+			urqlState: ssrCache.extractData(),
+		},
+	}
 }
 
 export default Blog
