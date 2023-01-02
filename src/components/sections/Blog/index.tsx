@@ -147,7 +147,7 @@ const Blog: React.FC = () => {
 				>
 					<div className="blog__list__wrapper">
 						{blogList?.map((post, index) => {
-							return <BlogItem post={post} key={index} />
+							return <BlogItem content={post} key={index} />
 						})}
 					</div>
 				</motion.div>

@@ -3,8 +3,12 @@ import React from "react"
 import Image from "next/image"
 import { mounthsInPortuguese } from "../../../classes/Util"
 
-const BlogItem: React.FC = ({ post }: any) => {
-	const postReleaseDate = new Date(post.postedAt)
+type TBlogItem = {
+	content: any
+}
+
+const BlogItem: React.FC<TBlogItem> = ({ content }) => {
+	const postReleaseDate = new Date(content.postedAt)
 	const postReleaseYear = postReleaseDate.getFullYear()
 	const postReleaseMounth = postReleaseDate.getMonth()
 
@@ -12,31 +16,31 @@ const BlogItem: React.FC = ({ post }: any) => {
 		<div className="blog__list__item">
 			<picture className="blog__list__item__thumbnail">
 				<Image
-					src={post.thumbnail.url}
-					width={post.thumbnail.width}
-					height={post.thumbnail.height}
+					src={content.thumbnail.url}
+					width={content.thumbnail.width}
+					height={content.thumbnail.height}
 					alt={"Conteúdo do Blog "}
 				/>
 			</picture>
 
 			<div className="blog__list__item__info">
-				<span className="blog__list__item__info__category">{post.category}</span>
+				<span className="blog__list__item__info__category">{content.category}</span>
 				<span className="blog__list__item__info__release">{`${mounthsInPortuguese[postReleaseMounth]} ${postReleaseYear}`}</span>
 			</div>
 
-			<strong className="blog__list__item__title">{post.title}</strong>
+			<strong className="blog__list__item__title">{content.title}</strong>
 
 			<div className="blog__list__item__author">
 				<picture className="blog__list__item__author__avatar">
 					<Image
-						src={post.blogAuthor.avatar.url}
-						width={post.blogAuthor.avatar.width}
-						height={post.blogAuthor.avatar.height}
+						src={content.blogAuthor.avatar.url}
+						width={content.blogAuthor.avatar.width}
+						height={content.blogAuthor.avatar.height}
 						alt={"Autor do Blog"}
 					/>
 				</picture>
 				<div className="blog__list__item__author__name">
-					<span>{post.blogAuthor.name}</span>
+					<span>{content.blogAuthor.name}</span>
 					<span className="blog__list__item__author__tag">Autor</span>
 				</div>
 			</div>
