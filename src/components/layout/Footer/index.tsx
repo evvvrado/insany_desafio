@@ -14,7 +14,11 @@ const Footer: React.FC = () => {
 			<div className="container">
 				<div className="wrapper">
 					<div className="footer__left">
-						<Link href={"/"} className="footer__left__logo">
+						<Link
+							href={"/"}
+							title="Ir para o menu inicial"
+							className="footer__left__logo"
+						>
 							<LogoFooter />
 						</Link>
 

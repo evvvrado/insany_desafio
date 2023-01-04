@@ -39,7 +39,7 @@ const Header: React.FC = () => {
 			>
 				<div className="wrapper">
 					<div className="header__logo">
-						<Link href={"/"}>
+						<Link href={"/"} title="Ir para o menu inicial">
 							<picture className="header__logo__picture">
 								{windowWidth && windowWidth > 700 ? <LogoImg /> : <LogoImgMobile />}
 							</picture>

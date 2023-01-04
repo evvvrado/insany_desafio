@@ -6,7 +6,7 @@ const Newsletter: React.FC = () => {
 	return (
 		<section className="newsletter">
 			<div className="wrapper">
-				<h3 className="newsletter__subtitle">Newsletter</h3>
+				<p className="newsletter__subtitle">Newsletter</p>
 				<h2 className="newsletter__title">Fique por dentro das novidades</h2>
 				<p className="newsletter__text">
 					Junte-se a mais de 20.000 clientes que já usam o SB para ficar por dentro de

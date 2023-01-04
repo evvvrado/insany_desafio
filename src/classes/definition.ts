@@ -2,8 +2,7 @@ export const definition = {
 	name: "Smart Business",
 	nickname: "Smart Business",
 	description: "O segredo para um negócio de sucesso!",
-	keywords:
-		"Desenvolvedores, Web, Agências, Profissionais, Criativos, Front-end, Back-end, Websites",
+	keywords: "Negócios, Insany, Template,  Web, Profissionais, Criativos, Front-end, Websites",
 	title: "Smart Business",
 	url: "www.smartbusiness.com.br",
 	theme: "#1D63FF",

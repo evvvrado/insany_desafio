@@ -1,7 +1,7 @@
 import React from "react"
 
 import Image from "next/image"
-import { mounthsInPortuguese } from "../../../classes/Util"
+import { monthsInPortuguese } from "../../../classes/Util"
 
 type TBlogItem = {
 	content: any
@@ -25,7 +25,7 @@ const BlogItem: React.FC<TBlogItem> = ({ content }) => {
 
 			<div className="blog__list__item__info">
 				<span className="blog__list__item__info__category">{content.category}</span>
-				<span className="blog__list__item__info__release">{`${mounthsInPortuguese[postReleaseMounth]} ${postReleaseYear}`}</span>
+				<span className="blog__list__item__info__release">{`${monthsInPortuguese[postReleaseMounth]} ${postReleaseYear}`}</span>
 			</div>
 
 			<strong className="blog__list__item__title">{content.title}</strong>

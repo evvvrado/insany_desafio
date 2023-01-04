@@ -104,7 +104,7 @@ const Blog: React.FC = () => {
 					className="blog__header"
 				>
 					<div className="blog__header__text">
-						<h3 className="blog__header__subtitle">Nosso blog</h3>
+						<p className="blog__header__subtitle">Nosso blog</p>
 						<h2 className="blog__header__title">Notícias do mundo da tecnologia</h2>
 					</div>
 

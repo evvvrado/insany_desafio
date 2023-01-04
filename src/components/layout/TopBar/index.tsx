@@ -22,6 +22,7 @@ const TopBar: React.FC = () => {
 
 				<button
 					name="fechar"
+					aria-label="fechar barra superior"
 					type="button"
 					className="topbar__close"
 					onClick={handleCloseTopbar}

@@ -9,40 +9,11 @@ const Doubts: React.FC = () => {
 	const [{ data }] = useDoubtsQuery({})
 
 	const doubtsList = [data?.home?.doubtsList][0]
-
-	// const doubtsList = [
-	// 	{
-	// 		summary: "Quais recursos ainda posso acessar nas novas Páginas?",
-	// 		content:
-	// 			"Turpis at malesuada orci ultricies ipsum amet sed cras. Enim ut urna feugiat ultrices semper quisque at. Viverra lectus ut a gravida aliquet cras est lectus ullamcorper. Elementum diam iaculis neque arcu, aliquet consectetur.",
-	// 	},
-	// 	{
-	// 		summary: "Como faço para abrir a minha nova Página?",
-	// 		content:
-	// 			"Turpis at malesuada orci ultricies ipsum amet sed cras. Enim ut urna feugiat ultrices semper quisque at. Viverra lectus ut a gravida aliquet cras est lectus ullamcorper. Elementum diam iaculis neque arcu, aliquet consectetur.",
-	// 	},
-	// 	{
-	// 		summary: "Há algum conteúdo que não migrará com a minha Página?",
-	// 		content:
-	// 			"Turpis at malesuada orci ultricies ipsum amet sed cras. Enim ut urna feugiat ultrices semper quisque at. Viverra lectus ut a gravida aliquet cras est lectus ullamcorper. Elementum diam iaculis neque arcu, aliquet consectetur.",
-	// 	},
-	// 	{
-	// 		summary: "Como as pessoas encontrarão a minha nova Página?",
-	// 		content:
-	// 			"Turpis at malesuada orci ultricies ipsum amet sed cras. Enim ut urna feugiat ultrices semper quisque at. Viverra lectus ut a gravida aliquet cras est lectus ullamcorper. Elementum diam iaculis neque arcu, aliquet consectetur.",
-	// 	},
-	// 	{
-	// 		summary: "O que é o Feed? Como faço para configurá-lo?",
-	// 		content:
-	// 			"Turpis at malesuada orci ultricies ipsum amet sed cras. Enim ut urna feugiat ultrices semper quisque at. Viverra lectus ut a gravida aliquet cras est lectus ullamcorper. Elementum diam iaculis neque arcu, aliquet consectetur.",
-	// 	},
-	// ]
-
 	return (
 		<section className="doubts">
 			<div className="wrapper">
 				<div className="doubts__text">
-					<h3 className="doubts__text__subtitle">Tire suas dúvidas</h3>
+					<p className="doubts__text__subtitle">Tire suas dúvidas</p>
 					<h2 className="doubts__text__title">Perguntas mais frequentes</h2>
 					<p className="doubts__text__description">
 						Separamos algumas perguntas e respostas que podem te ajudar na sua decisão

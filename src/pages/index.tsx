@@ -13,6 +13,8 @@ import Actions from "../components/sections/Actions"
 import Newsletter from "../components/sections/Newsletter"
 import Footer from "../components/layout/Footer"
 
+import { useState } from "react"
+
 export default function Home() {
 	console.log(
 		"\n%cmade with ❤ by %c@evvvrado",

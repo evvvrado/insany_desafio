@@ -38,7 +38,7 @@ const Works: React.FC = () => {
 				<div className="works__sells">
 					{windowWidth > 992 && (
 						<>
-							<h3 className="works__subtitle">Entenda como funciona</h3>
+							<p className="works__subtitle">Entenda como funciona</p>
 							<h2 className="works__title">Veja como aplicamos nossa metodologia</h2>
 						</>
 					)}
@@ -68,7 +68,7 @@ const Works: React.FC = () => {
 				>
 					{windowWidth < 992 && (
 						<>
-							<h3 className="works__subtitle">Entenda como funciona</h3>
+							<p className="works__subtitle">Entenda como funciona</p>
 							<h2 className="works__title">Veja como aplicamos nossa metodologia</h2>
 						</>
 					)}

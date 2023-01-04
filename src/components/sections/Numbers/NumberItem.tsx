@@ -1,7 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from "react"
 
-// import { Container } from './styles';
-
 type TNumberItem = {
 	number: {
 		value: number

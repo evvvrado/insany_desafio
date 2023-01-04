@@ -4,10 +4,8 @@ import LogoGoogle from "../../../assets/brands_logo_google.svg"
 import LogoSpotify from "../../../assets/brands_logo_spotify.svg"
 import LogoGithub from "../../../assets/brands_logo_github.svg"
 import LogoMicrosoft from "../../../assets/brands_logo_microsoft.svg"
-import LogDdigg from "../../../assets/brands_logo_digg.svg"
+import LogoDigg from "../../../assets/brands_logo_digg.svg"
 import LogoHostgator from "../../../assets/brands_logo_hostgator.svg"
-
-// import { Container } from './styles';
 
 const Brands: React.FC = () => {
 	const brandList = [
@@ -38,7 +36,7 @@ const Brands: React.FC = () => {
 		{
 			name: "digg",
 			ImageComponnent: function () {
-				return <LogDdigg />
+				return <LogoDigg />
 			},
 		},
 		{

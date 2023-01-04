@@ -27,6 +27,7 @@ const ListItem: React.FC<TListItem> = ({ summary, content, index }) => {
 
 					<button
 						name="toggledetail"
+						aria-label="abrir detalhes"
 						type="button"
 						className="doubts__list__item__details__summary__icon"
 					>

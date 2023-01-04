@@ -3,6 +3,7 @@ import React, { useContext } from "react"
 import { Context } from "../../../context/WindowProvider"
 
 import { motion } from "framer-motion"
+import { Animations } from "../../../classes/Animations"
 
 import videoThumb from "../../../assets/about_image_video.png"
 import videoThumbMobile from "../../../assets/about_image_video_mobile.png"
@@ -11,7 +12,6 @@ import imageEnterprise from "../../../assets/about_image_small.png"
 import IconPlay from "../../../assets/about_icon_play.svg"
 import IconCheck from "../../../assets/about_icon_check.svg"
 import IconArrow from "../../../assets/hero_icon_arrow-down.svg"
-import { Animations } from "../../../classes/Animations"
 
 const About: React.FC = () => {
 	const { windowWidth } = useContext(Context)
@@ -26,7 +26,7 @@ const About: React.FC = () => {
 					viewport={{ once: true }}
 					className="about__enterprise"
 				>
-					<h3 className="about__enterprise__subtitle">Sobre a empresa</h3>
+					<p className="about__enterprise__subtitle">Sobre a empresa</p>
 					<h2 className="about__enterprise__title">Criando e inovando desde 1988</h2>
 
 					<ul className="about__enterprise__list">
@@ -70,7 +70,11 @@ const About: React.FC = () => {
 							alt={"Vídeo exemplo"}
 						/>
 
-						<button type="button" className="about__video__thumbnail__play">
+						<button
+							type="button"
+							aria-label="iniciar video"
+							className="about__video__thumbnail__play"
+						>
 							<IconPlay />
 						</button>
 					</motion.picture>
